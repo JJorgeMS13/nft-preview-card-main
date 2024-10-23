@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@600&display=swap');
+
+$soft-blue: #8BACD9;
+$cyan: #00FFF8;
+$very-dark-blue-main: #0D192C;
+$very-dark-blue-card: #15263F;
+$very-dark-blue-line: #2E405A;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.6rem;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+.l-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: $very-dark-blue-main;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+        color: $cyan;
+    }
+}
+
+.c-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    background-color: $very-dark-blue-card;
+    border-radius: 1.5rem;
+    margin: 0 2.4rem;
+    padding: 2.45rem;
+    max-width: 35rem;
+
+    &__container-img {
+        position: relative;
+        border-radius: .8rem;
+        max-width: 30.2rem;
+        height: auto;
+    }
+    &__img {
+        border-radius: .8rem;
+        height: 100%;
+        width: 100%;
+    }
+    &__svg {
+        position: absolute;
+        border-radius: .8rem;
+        background-image: url('../images/icon-view.svg');
+        background-color: rgba(0, 255, 248, .5);
+        background-repeat: no-repeat;
+        background-position: 50%, 50%;
+        background-size: 5rem, 5rem;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        width: 100%;
+        height: 99%;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__title {
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+    &__description {
+        color: $soft-blue;
+        line-height: 2.6rem;
+        font-size: 1.8rem;
+        font-weight: 300;
+    }
+    &__eth-clock {
+        display: flex;
+        gap: 9.7rem;
+    }
+    &__eth {
+        display: flex;
+        gap: .6rem;
+        align-items: center;
+        color: $cyan;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    &__eth-icon {
+        display: inline-block;
+        background-image: url('../images/icon-ethereum.svg');
+        height: 1.8rem;
+        width: 1.1rem;
+    }
+    &__clock {
+        display: flex;
+        gap: .8rem;
+        align-items: center;
+        color: $soft-blue;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    &__clock-icon {
+        display: inline-block;
+        background-image: url('../images/icon-clock.svg');
+        height: 1.6rem;
+        width: 1.6rem;
+    }
+    &__divider {
+        border: none;
+        background-color: $very-dark-blue-line;
+        height: .1rem;
+        margin-top: .3rem;
+    }
+    &__user-info {
+        display: flex;
+        gap: 1.6rem;
+        align-items: center;
+    }
+    &__user-img {
+        border-radius: 50%;
+        border: .1rem solid white;
+        height: 3.3rem;
+        width: 3.3rem;
+    }
+    &__user-name {
+        color: $soft-blue;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}
+
+/* Footer */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+/* -------------(> 768px)-----------------*/
+@media screen and (min-width: 48rem) {
+    .c-card {
+        gap: 2.1rem;
+        margin: 0;
+
+        &__eth {
+            font-size: 1.6rem;
+        }
+        &__clock {
+            font-size: 1.6rem;
+        }
+        &__user-name {
+            font-size: 1.6rem;
+        }
+    }
+}
